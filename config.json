@@ -1,0 +1,20 @@
+{
+    "USE_MODELSCOPE": "0",
+    "translators": [
+        {
+            "name": "openailiked",
+            "envs": {
+                "OPENAILIKED_BASE_URL": "https://openrouter.ai/api/v1",
+                "OPENAILIKED_API_KEY": "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",
+                "OPENAILIKED_MODEL": "deepseek/deepseek-chat-v3-0324:free"
+            }
+        }
+    ],
+    "ENABLED_SERVICES": [
+        "OpenAI-Liked"
+    ],
+    "HIDDEN_GRADIO_DETAILS": true,
+    "PDF2ZH_LANG_FROM": "English",
+    "PDF2ZH_LANG_TO": "Simplified Chinese",
+    "NOTO_FONT_PATH": "/app/SourceHanSerifCN-Regular.ttf"
+}
