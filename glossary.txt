@@ -1,0 +1,3 @@
+vcls: visual classes, 视觉类别
+rsrcmgr: PDFResourceManager, PDF资源管理器
+sstk: segment stack, 段栈

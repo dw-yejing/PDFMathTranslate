@@ -1012,8 +1012,8 @@ class QwenMtTranslator(OpenAITranslator):
     def lang_mapping(input_lang: str) -> str:
         """
         Mapping the language code to the language code that Aliyun Qwen-Mt model supports.
-        Since all existings languagues codes used in gui.py are able to be mapped, the original
-        languague code will not be checked.
+        Since all existing languages codes used in gui.py are able to be mapped, the original
+        language code will not be checked.
         """
         langdict = {
             "zh": "Chinese",
@@ -1032,7 +1032,7 @@ class QwenMtTranslator(OpenAITranslator):
 
     def do_translate(self, text) -> str:
         """
-        Qwen-MT Model reqeust to send translation_options to the server.
+        Qwen-MT Model request to send translation_options to the server.
         domains are options, but suggested. it must be in English.
         """
         translation_options = {

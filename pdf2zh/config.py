@@ -77,7 +77,7 @@ class ConfigManager:
         return obj
 
     @classmethod
-    def custome_config(cls, file_path):
+    def custom_config(cls, file_path):
         """使用自定义路径加载配置文件"""
         custom_path = Path(file_path)
         if not custom_path.exists():
@@ -152,12 +152,12 @@ class ConfigManager:
             instance._save_config()
 
     @classmethod
-    def get_env_by_translatername(cls, translater_name, name, default=None):
+    def get_env_by_translator_name(cls, translator_name, name, default=None):
         """根据 name 获取对应的 translator 配置"""
         instance = cls.get_instance()
         translators = instance._config_data.get("translators", [])
         for translator in translators:
-            if translator.get("name") == translater_name.name:
+            if translator.get("name") == translator_name.name:
                 if translator["envs"][name]:
                     return translator["envs"][name]
                 else:
@@ -169,14 +169,14 @@ class ConfigManager:
         with instance._lock:
             translators = instance._config_data.get("translators", [])
             for translator in translators:
-                if translator.get("name") == translater_name.name:
+                if translator.get("name") == translator_name.name:
                     translator["envs"][name] = default
                     instance._save_config()
                     return default
             translators.append(
                 {
-                    "name": translater_name.name,
-                    "envs": copy.deepcopy(translater_name.envs),
+                    "name": translator_name.name,
+                    "envs": copy.deepcopy(translator_name.envs),
                 }
             )
             instance._config_data["translators"] = translators

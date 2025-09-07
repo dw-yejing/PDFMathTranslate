@@ -292,7 +292,7 @@ def translate_file(
     for k, v in _envs.items():
         if str(k).upper().endswith("API_KEY") and str(v) == "***":
             # Load Real API_KEYs from local configure file
-            real_keys: str = ConfigManager.get_env_by_translatername(
+            real_keys: str = ConfigManager.get_env_by_translator_name(
                 translator, k, None
             )
             _envs[k] = real_keys
@@ -620,7 +620,7 @@ with gr.Blocks(
                     _envs.append(gr.update(visible=False, value=""))
                 for i, env in enumerate(translator.envs.items()):
                     label = env[0]
-                    value = ConfigManager.get_env_by_translatername(
+                    value = ConfigManager.get_env_by_translator_name(
                         translator, env[0], env[1]
                     )
                     visible = True
@@ -799,7 +799,7 @@ def parse_user_passwd(file_path: str) -> tuple:
 
 
 def setup_gui(
-    share: bool = False, auth_file: list = ["", ""], server_port=7860
+    share: bool = False, auth_file: list = ["", ""], server_port=8005
 ) -> None:
     """
     Setup the GUI with the given parameters.
